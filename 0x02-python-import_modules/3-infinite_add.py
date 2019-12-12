@@ -5,5 +5,8 @@ if __name__ == "__main__":
     if len_argv == 1:
         sum = 0
     else:
-        sum = int(sys.argv[1]) + int(sys.argv[2])
+        sum = 0
+        while len_argv > 1:
+            sum = sum + int(sys.argv[len_argv - 1])
+            len_argv -= 1
     print("{}".format(sum))
