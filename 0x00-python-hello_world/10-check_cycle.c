@@ -9,7 +9,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *iterator;
+	listint_t *iterator, *tmp;
 
 	if (!list || !list->next)
 		return (0);
@@ -17,7 +17,8 @@ int check_cycle(listint_t *list)
 	iterator = list;
 	while (iterator->next != NULL)
 	{
-		if (iterator->next == list)
+		tmp = iterator;
+		if (iterator->next == list || tmp <= iterator->next)
 			return (1);
 		iterator = iterator->next;
 	}
