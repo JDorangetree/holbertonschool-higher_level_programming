@@ -21,13 +21,13 @@ if __name__ == "__main__":
     sign = find_operator(sys.argv[2])
     if sign == "+":
         result = add(a, b)
-        print("{}".format(result))
+        print("{} {} {} = {}".format(a, sign, b, result))
     elif sign == "-":
         result = sub(a, b)
-        print("{}".format(result))
+        print("{} {} {} = {}".format(a, sign, b, result))
     elif sign == "*":
         result = mul(a, b)
-        print("{}".format(result))
+        print("{} {} {} = {}".format(a, sign, b, result))
     elif sign == "/":
         result = div(a, b)
-        print("{}".format(result))
+        print("{} {} {} = {}".format(a, sign, b, result))
