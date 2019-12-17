@@ -6,5 +6,5 @@ def no_c(my_string):
     for j in slist:
         if j == 'c' or j == 'C':
             slist.remove(j)
-        new_string = "".join(slist)
+    new_string = "".join(slist)
     return new_string
