@@ -4,7 +4,7 @@ def multiple_returns(sentence):
         x = len(sentence)
         y = sentence[0]
     else:
-        y = ""
+        y = None
         x = 0
     packed = (x, y)
     return(packed)
