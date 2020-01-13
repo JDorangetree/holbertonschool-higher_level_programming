@@ -7,6 +7,16 @@ in this project we used External Documentation.
 
 
 def matrix_divided(matrix, div):
+    """Divides all elements of a matrix
+    Arguments:
+    matrix: must be a list of lists ints or floats
+    with rows of the same size
+    div: must be a number int or float and not 0
+    Result is rounded to 2 decimal places
+    and a new matrix is generated
+    Raise TypeError or ZeroDivisionError if conditions not
+    met"""
+
     new_matrix = [x[:] for x in matrix]
     if div == 0:
         raise ZeroDivisionError("division by zero")
