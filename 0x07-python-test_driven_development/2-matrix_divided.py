@@ -17,12 +17,19 @@ def matrix_divided(matrix, div):
     Raise TypeError or ZeroDivisionError if conditions not
     met"""
 
-    new_matrix = [x[:] for x in matrix]
+    if not matrix or matrix == [[]]:
+        raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
+    for z in range(len(matrix)):
+        if not isinstance(matrix[z], list) or not matrix[z]:
+            raise TypeError("matrix must be a matrix\
+ (list of lists) of integers/floats")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     else:
+        new_matrix = [x[:] for x in matrix]
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
                 if not isinstance(matrix[i][j], (int, float)):
