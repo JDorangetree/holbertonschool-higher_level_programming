@@ -7,12 +7,11 @@ in this project we used External Documentation.
 
 
 def print_square(size):
-    """Prints a Name
-    Args:
-        first_name: must be a string
-        last_name: must be a string, if no argument given,
-        then empty by default
-    Otherwise a TypeError is raised"""
+    """Prints a square using the '#' character
+    Arguments:
+    size: is the size length of the square
+    it must be a interger otherwise a TypeError will be raised
+    is size is less than 0, a ValueError will be raise"""
 
     if isinstance(size, int):
         if size < 0:
