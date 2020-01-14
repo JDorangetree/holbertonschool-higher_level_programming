@@ -1,0 +1,78 @@
+=========================
+ Doctest for print_square
+=========================
+
+
+``print_square(size)`` prints a name in the format
+My name is <first name> <last name>
+
+Import function
+=================
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Integers
+=========
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+   >>> print_square(0)
+   >>>
+
+
+Invalid size Argument
+======================
+
+
+Float Value
+
+   >>> print_square(2.2)
+   Traceback (most recent call last):
+             ...
+   TypeError: size must be an integer
+
+
+
+Negative Float Value
+
+
+   >>> print_square(-4.5)
+   Traceback (most recent call last):
+             ...
+   TypeError: size must be an integer
+
+
+String
+
+
+   >>> print_square('H')
+   Traceback (most recent call last):
+             ...
+   TypeError: size must be an integer
+
+
+
+Size Value less than 0
+=======================
+
+   >>> print_square(-100)
+   Traceback (most recent call last):
+             ...
+   ValueError: size must be >= 0
+
+
+No argument
+============
+
+    >>> print_square()
+    Traceback (most recent call last):
+              ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
