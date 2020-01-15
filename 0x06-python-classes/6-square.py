@@ -53,19 +53,19 @@ positive integers")
         return a_square
 
     def my_print(self):
-        if self.__size == 0:
-            print("")
+        if self.size == 0:
+            print()
         else:
             x = self.__position
             for i in range(0, x[1]):
-                print("")
+                print()
             for i in range(0, self.__size):
-                if x[0] > 1:
+                if x[0] > 0:
                     y = " "
                 else:
                     y = ""
                 z = x[0] * y
                 print("{}".format(z), end="")
-                for j in range(0, self.__size):
+                for j in range(0, self.size):
                     print("#", end="")
                 print("")
