@@ -39,10 +39,10 @@ class Square:
                 if value[0] >= 0 and value[1] >= 0:
                     self.__position = value
                 else:
-                    raise TypeError("position must be a tuple of 2\
+                    raise TypeError("position must be a tuple of 2 \
 positive integers")
             else:
-                raise TypeError("position must be a tuple of 2\
+                raise TypeError("position must be a tuple of 2 \
 positive integers")
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -60,7 +60,10 @@ positive integers")
             for i in range(0, x[1]):
                 print("")
             for i in range(0, self.__size):
-                y = "_"
+                if x[0] > 1:
+                    y = "_"
+                else:
+                    y = ""
                 z = x[0] * y
                 print("{}".format(z), end="")
                 for j in range(0, self.__size):
