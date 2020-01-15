@@ -40,7 +40,7 @@ class Square:
                     self.__position = value
                 else:
                     raise TypeError("position must be a tuple of 2\
-positive integers")    
+positive integers")
             else:
                 raise TypeError("position must be a tuple of 2\
 positive integers")
