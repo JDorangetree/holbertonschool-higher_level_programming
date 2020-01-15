@@ -18,11 +18,9 @@ class Square:
         """Private instance attribute property setter."""
         x = isinstance(value, int)
         if not x:
-            print("size must be an integer", end=" ")
-            raise TypeError
+            raise TypeError("size must be an integer")
         elif value < 0:
-            print("size must be >= 0", end=" ")
-            raise ValueError
+            raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
