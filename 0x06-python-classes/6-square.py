@@ -30,13 +30,14 @@ class Square:
         """Private instance attribute getter method."""
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """Private instance attribute property setter."""
         x = isinstance(value, tuple)
         if x and len(value) == 2:
             if isinstance(value[0], int) and isinstance(value[1], int):
-                self.__position = value
+                if value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
             else:
                 raise TypeError("position must be a tuple of 2\
 positive integers")
