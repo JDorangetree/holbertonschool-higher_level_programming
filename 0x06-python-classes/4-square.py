@@ -2,14 +2,20 @@
 class Square:
     """class Square that defines a square"""
     def __init__(self, size=0):
+        """The __init__ method of the square class
+        Args:
+            size: Is the type int private attribute
+        """
         self.__size = size
 
     @property
     def size(self):
+        """Private instance attribute getter method."""
         return self.__size
 
-    @__size.setter
-    def __size(self, value):
+    @size.setter
+    def size(self, value):
+        """Private instance attribute property setter."""
         x = isinstance(value, int)
         if not x:
             print("size must be an integer", end=" ")
