@@ -61,7 +61,7 @@ positive integers")
                 print("")
             for i in range(0, self.__size):
                 if x[0] > 1:
-                    y = "_"
+                    y = " "
                 else:
                     y = ""
                 z = x[0] * y
