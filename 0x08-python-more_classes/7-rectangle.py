@@ -16,7 +16,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             print_string = ""
         else:
-            char = self.print_symbol
+            char = str(self.print_symbol)
             for i in range(0, self.__height):
                 print_string = print_string + "{}".format(char * self.__width)
                 if not (self.__height - i) == 1:
