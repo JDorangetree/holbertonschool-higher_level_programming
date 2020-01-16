@@ -59,4 +59,4 @@ class Rectangle:
         return perimeter_rectangle
 
     def __repr__(self):
-        return "Rectangle ({}, {})".format(self.width, self.height)
+        return "Rectangle ({:d}, {:d})".format(self.width, self.height)
