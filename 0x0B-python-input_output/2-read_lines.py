@@ -7,10 +7,10 @@ def read_lines(filename="", nb_lines=0):
         new_file.seek(0)
         if nb_lines <= 0:
             strg = new_file.read()
-            print(strg)
+            print(strg, end="")
         elif nb_lines >= i:
             strg = new_file.read()
-            print(strg)
+            print(strg, end="")
         else:
             new_file.seek(0)
             while nb_lines > 0:
