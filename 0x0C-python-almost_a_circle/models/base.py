@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Module of Base Class for Geometry Rectangle and Square """
 
 import json
 
