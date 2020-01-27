@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-""" Module of Base Class for Geometry Rectangle and Square """
+""" Module of Base Class for Geometry fig and Square """
 
 import json
+import turtle
+import random
 
 
 class Base():
@@ -51,7 +53,7 @@ class Base():
         """ returns an instance with all attributes already set """
         if cls.__name__ == "Square":
             instance = cls(1)
-        elif cls.__name__ == "Rectangle":
+        elif cls.__name__ == "fig":
             instance = cls(1, 1)
         instance.update(**dictionary)
         return instance
@@ -71,3 +73,50 @@ class Base():
                 return list_of_instances
         except:
             return []
+
+    @staticmethod
+    def draw(list_figs, list_squares):
+        """ Draws Rectangles and Squares"""
+        if (not list_squares and not list_figs):
+            return
+        if (list_figs == [] and list_squares == []):
+            return
+
+        l_colors = ["red", "green", "blue", "orange", "violet"]
+
+        fig = turtle.Turtle()
+        fig.hideturtle()
+        fig.speed(1)
+
+        def draw_shape(fig, fig_width, fig_height, goto_x, goto_y, color):
+            fig.penup()
+            fig.goto(goto_x, goto_y)
+            fig.pendown()
+            fig.fillcolor(color)
+            fig.begin_fill()
+            fig.fd(fig_width)
+            fig.left(90)
+            fig.fd(fig_height)
+            fig.left(90)
+            fig.fd(fig_width)
+            fig.left(90)
+            fig.fd(fig_height)
+            fig.end_fill()
+
+        for i in list_figs:
+            f_width = i.width
+            f_height = i.height
+            goto_x = i.x
+            goto_y = i.y
+            index = random.randint(0, 4)
+            draw_shape(fig, f_width, f_height, goto_x, goto_y, l_colors[index])
+
+        for i in list_squares:
+            fig_width = i.size
+            fig_height = i.size
+            goto_x = i.x
+            goto_y = i.y
+            index = random.randint(0, 4)
+            draw_shape(fig, f_width, f_height, goto_x, goto_y, l_colors[index])
+
+        turtle.done()
