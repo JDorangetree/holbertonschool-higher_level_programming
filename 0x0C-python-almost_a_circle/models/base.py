@@ -4,6 +4,7 @@
 import json
 import turtle
 import random
+import csv
 
 
 class Base():
@@ -74,12 +75,32 @@ class Base():
         except:
             return []
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serializes to CSV and saves to file """
+        file = cls.__name__ + ".csv"
+        csv_list = []
+
+        if list_objs:
+            for x in list_objs:
+                i = x.to_dictionary()
+                if cls.__name__ == "Square":
+                    csv_list.append([i["id"], i["size"],
+                                    i["x"], i["y"]])
+                if cls.__name__ == "Rectangle":
+                    csv_list.append([i["id"], i["width"],
+                                    i["height"], i["x"], i["y"]])
+
+        with open(file, "w", encoding="utf-8") as myfile:
+            w = csv.writer(myfile)
+            w.writerows(csv_list)
+
     @staticmethod
-    def draw(list_figs, list_squares):
+    def draw(list_rectangles, list_squares):
         """ Draws Rectangles and Squares"""
-        if (not list_squares and not list_figs):
+        if (not list_squares and not list_rectangles):
             return
-        if (list_figs == [] and list_squares == []):
+        if (list_rectangles == [] and list_squares == []):
             return
 
         l_colors = ["red", "green", "blue", "orange", "violet"]
@@ -87,10 +108,11 @@ class Base():
         fig = turtle.Turtle()
         fig.hideturtle()
         fig.speed(1)
+        turtle.title("Squares and Rectangles")
 
         def draw_shape(fig, fig_width, fig_height, goto_x, goto_y, color):
             fig.penup()
-            fig.goto(goto_x, goto_y)
+            fig.setposition(goto_x * 2, goto_y * 2)
             fig.pendown()
             fig.fillcolor(color)
             fig.begin_fill()
@@ -103,7 +125,7 @@ class Base():
             fig.fd(fig_height)
             fig.end_fill()
 
-        for i in list_figs:
+        for i in list_rectangles:
             f_width = i.width
             f_height = i.height
             goto_x = i.x
