@@ -1,4 +1,4 @@
---ists all shows without the genre Comedy in the database hbtn_0d_tvshows.
+-- ists all shows without the genre Comedy in the database hbtn_0d_tvshows.
 --
 SELECT DISTINCT tv_shows.title
 FROM tv_shows
