@@ -5,7 +5,6 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-
     my_name = sys.argv[1]
     my_pass = sys.argv[2]
     my_db = sys.argv[3]
