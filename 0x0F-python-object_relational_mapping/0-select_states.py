@@ -2,7 +2,7 @@
 """ Get all states """
 
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == "__main__":
     my_name = sys.argv[1]
