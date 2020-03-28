@@ -13,7 +13,8 @@ if __name__ == "__main__":
                          user=my_name,
                          host="localhost", port=3306)
     c = db.cursor()
-    c.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id;")
+    c.execute("SELECT * FROM states WHERE name LIKE 'N%' "
+              "ORDER BY states.id ASC;")
     a = c.fetchall()
     for row in a:
         print(row)
