@@ -19,7 +19,7 @@ if __name__ == "__main__":
               "ORDER BY states.id", (my_state,))
     a = c.fetchall()
     for row in a:
-        print(row)
+        print("{}".format(row))
 
     c.close()
     db.close()
