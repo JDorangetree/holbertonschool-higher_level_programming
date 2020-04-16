@@ -12,4 +12,6 @@ if __name__ == "__main__":
     for i in html._headers:
         if i[0] == "X-Request-Id":
             tag = i[1]
-    print(tag)
+            print(tag)
+        else:
+            pass
