@@ -2,7 +2,7 @@
 """sends a request to the URL and displays the body of the response"""
 
 from urllib.request import urlopen
-from urllib.error import URLError
+from urllib import error
 from sys import argv
 
 if __name__ == "__main__":
@@ -12,5 +12,5 @@ if __name__ == "__main__":
         with urlopen(url) as response:
             res = response.read()
             print(res.decode('utf-8'))
-    except URLError as e:
+    except error.URLError as e:
         print("Error code: {}".format(e.code))
