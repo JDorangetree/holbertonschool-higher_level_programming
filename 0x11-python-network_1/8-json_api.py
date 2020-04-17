@@ -6,7 +6,7 @@ from sys import argv
 
 if __name__ == "__main__":
 
-    url = "http://0.0."
+    url = "http://0.0.0.0:5000/search_user"
     data = {'q': argv[1]}
     try:
         r = requests.post(url, data)
