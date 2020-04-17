@@ -9,7 +9,7 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     data = {'q': argv[1]}
     r = requests.post(url, data)
-    if (r):
+    if (r.json()):
         dic = r._content.decode('utf-8')
         try:
             id = eval(dic)["id"]
