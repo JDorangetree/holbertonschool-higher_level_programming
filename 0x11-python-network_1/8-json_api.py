@@ -8,8 +8,8 @@ if __name__ == "__main__":
 
     url = "http://0.0.0.0:5000/search_user"
     data = {'q': argv[1]}
-    try:
-        r = requests.post(url, data)
+    r = requests.post(url, data)
+    if (r):
         dic = r._content.decode('utf-8')
         try:
             id = eval(dic)["id"]
@@ -17,5 +17,5 @@ if __name__ == "__main__":
             print("[{}] {}".format(id, name))
         except:
             print("No result")
-    except:
+    else:
         print("Not a valid JSON")
