@@ -6,7 +6,6 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
-
     try:
         with urlopen(url) as response:
             res = response.read()
