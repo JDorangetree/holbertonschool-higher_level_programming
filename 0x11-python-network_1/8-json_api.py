@@ -13,13 +13,13 @@ if __name__ == "__main__":
         letter = ""
     data = {'q': letter}
     r = requests.post(url, data)
-    dic = r.json()
-    if (r):
-        try:
+    try:
+        dic = r.json()
+        if dic:
             id = dic["id"]
             name = dic["name"]
             print("[{}] {}".format(id, name))
-        except:
+        else:
             print("No result")
-    else:
+    except:
         print("Not a valid JSON")
