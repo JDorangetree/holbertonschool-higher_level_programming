@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """sends a request to the URL and displays the body of the response"""
 
-from urllib.request import Request, urlopen
-from urllib.error import HTTPError
+from urllib.request import urlopen
+from urllib.error import URLError
 from sys import argv
 
 if __name__ == "__main__":
@@ -12,6 +12,5 @@ if __name__ == "__main__":
         with urlopen(url) as response:
             res = response.read()
             print(res.decode('utf-8'))
-
-    except HTTPError as e:
+    except URLError as e:
         print("Error code: {}".format(e.code))
