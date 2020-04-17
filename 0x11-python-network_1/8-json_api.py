@@ -9,11 +9,11 @@ if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
     data = {'q': argv[1]}
     r = requests.post(url, data)
-    if (r.json()):
-        dic = r._content.decode('utf-8')
+    dic = r.json()
+    if (r):
         try:
-            id = eval(dic)["id"]
-            name = eval(dic)["name"]
+            id = dic["id"]
+            name = dic["name"]
             print("[{}] {}".format(id, name))
         except:
             print("No result")
