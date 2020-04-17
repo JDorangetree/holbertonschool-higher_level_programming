@@ -7,7 +7,11 @@ from sys import argv
 if __name__ == "__main__":
 
     url = "http://0.0.0.0:5000/search_user"
-    data = {'q': argv[1]}
+    if (argv[1]):
+        letter = argv[1]
+    else:
+        letter = ""
+    data = {'q': letter}
     r = requests.post(url, data)
     dic = r.json()
     if (r):
