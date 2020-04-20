@@ -11,13 +11,12 @@ if __name__ == "__main__":
     url = 'https://api.github.com/repos/{}/{}/commits'
     r = requests.get(url.format(owner_name, repo_name))
     j = 0
-    try:
-        dic = r.json()
-        for i in dic:
-            if (j < 10):
-                name = i.get('commit').get('author').get('name')
-                sha = i.get('commit').get('tree').get('sha')
-                j = j + 1
-                print("{}: {}".format(sha, name))
-    except ValueError:
-        print("None")
+    dic = r.json()
+    for i in dic[:10]:
+        sha = i.get('sha')
+        commit = i.get('commit')
+        if commit:
+            author = commit.get('author')
+        if author:
+            name = author.get('name')
+        print("{}: {}".format(sha, name))
