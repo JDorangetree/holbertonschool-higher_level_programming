@@ -14,10 +14,7 @@ if __name__ == "__main__":
     j = 0
     for i in dic:
         if (j < 10):
-            authors = i.get('commit')
-            tree = authors.get('tree')
-            sha = tree.get('sha')
-            author = authors.get('author')
-            name = author.get('name')
+            name = i.get('commit').get('author').get('name')
+            sha = i.get('commit').get('tree').get('sha')
             j = j + 1
             print("{}: {}".format(sha, name))
