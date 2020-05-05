@@ -4,7 +4,7 @@ const args = process.argv;
 const nArgs = args.length;
 const X = 'X';
 let square;
-if (nArgs === 2) {
+if (nArgs === 2 || !Number.isNaN(args[2])) {
   console.log('Missing size');
 } else {
   square = args[2];
