@@ -11,9 +11,9 @@ function factorial (number) {
   }
   return (result);
 }
-if (nArgs === 2) {
+if (nArgs === 2 || Number.parseInt(args[2]) === 0) {
   console.log('1');
 } else {
-  x = factorial(args[2]);
+  x = factorial(Number.parseInt(args[2]));
   console.log(x);
 }
