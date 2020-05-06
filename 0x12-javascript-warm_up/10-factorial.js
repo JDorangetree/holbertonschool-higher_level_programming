@@ -1,12 +1,16 @@
 #!/usr/bin/node
 const args = process.argv;
-let x = parseInt(args[2]);
-let f = 1;
-function factorial (number, result) {
-  return number * result;
+let numPrint;
+function factorial (x) {
+  if (x === 0) {
+    return 1;
+  } else {
+    return factorial(x - 1) * x;
+  }
 }
-while (x > 0) {
-  f = factorial(f, x);
-  x--;
+if (args[2] === undefined || !parseInt(args[2])) {
+  console.log(1);
+} else {
+  numPrint = factorial(parseInt(args[2]));
+  console.log(numPrint);
 }
-console.log(f);
