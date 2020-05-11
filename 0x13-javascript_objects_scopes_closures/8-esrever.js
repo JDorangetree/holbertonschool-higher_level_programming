@@ -6,7 +6,6 @@ exports.esrever = function (list) {
     const reverseItem = list.reduceRight(myFunction);
     newList.push(reverseItem);
     list.pop();
-    console.log(listLength);
   }
   return newList;
   function myFunction (value) {
