@@ -35,7 +35,7 @@ class Square extends Rectangle {
     if (c === undefined) {
       this.print();
     } else {
-      const C = 'C';
+      const C = c;
       for (let i = this.height; i > 0; i--) {
         console.log(C.repeat(this.width));
       }
