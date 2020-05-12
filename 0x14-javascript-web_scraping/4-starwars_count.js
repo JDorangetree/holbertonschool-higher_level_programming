@@ -1,6 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const args = process.argv;
+let count = 0;
 
 const options = {
   url: args[2],
@@ -10,7 +11,6 @@ request(options, function (error, response, body) {
   if (!error === null) {
     console.error(error);
   } else {
-    let count = 0;
     let result = [];
     const json = JSON.parse(body);
     result = json.results;
@@ -23,6 +23,6 @@ request(options, function (error, response, body) {
         }
       }
     }
-    console.log(count);
   }
+  console.log(count);
 });
