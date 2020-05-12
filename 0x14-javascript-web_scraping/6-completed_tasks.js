@@ -2,7 +2,6 @@
 const request = require('request');
 const args = process.argv;
 const returnDict = {};
-let count = 0;
 const options = {
   url: args[2]
 };
@@ -17,7 +16,7 @@ request(options, function (error, response, body) {
     }
     const uniOcurr = Array.from(new Set(ids));
     for (let b = 0; b < uniOcurr.length; b++) {
-      count = 0;
+      let count = 0;
       for (let a = 0; a < json.length; a++) {
         if (json[a].userId === uniOcurr[b]) {
           if (json[a].completed === true) {
@@ -27,6 +26,6 @@ request(options, function (error, response, body) {
       }
       returnDict[uniOcurr[b]] = count;
     }
-    console.log(returnDict);
   }
+  console.log(returnDict);
 });
