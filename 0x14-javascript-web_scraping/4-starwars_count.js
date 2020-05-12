@@ -3,7 +3,7 @@ const request = require('request');
 const args = process.argv;
 
 const options = {
-  url: args[2],
+  url: args[2]
 };
 request(options, function (error, response, body) {
   if (!error === null) {
