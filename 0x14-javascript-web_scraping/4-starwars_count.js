@@ -4,7 +4,6 @@ const args = process.argv;
 
 const options = {
   url: args[2],
-  method: 'GET'
 };
 request(options, function (error, response, body) {
   if (!error === null) {
