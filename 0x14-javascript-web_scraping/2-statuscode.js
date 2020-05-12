@@ -2,6 +2,15 @@
 const request = require('request');
 const args = process.argv;
 
-request(`${args[2]}`, function (response) {
-  console.log('code:', response && response.code);
+const options = {
+  url: args[2],
+  method: 'GET'
+};
+
+request(options, function (res, error) {
+  if (error) {
+    console.error('error:', error);
+  } else {
+    console.log('code:', res && res.statusCode);
+  }
 });
