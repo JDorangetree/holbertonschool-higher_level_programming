@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
 const ocurreList = [];
-const returnDict = [];
+const returnDict = {};
 for (const userId in dict) {
   ocurreList.push(dict[userId]);
 }
@@ -13,6 +13,6 @@ for (let i = 0; i < uniOcurr.length; i++) {
       listValue.push(key);
     }
   }
-  returnDict.push(uniOcurr[i].toString(), listValue);
+  returnDict[uniOcurr[i]] = listValue;
 }
 console.log(returnDict);
