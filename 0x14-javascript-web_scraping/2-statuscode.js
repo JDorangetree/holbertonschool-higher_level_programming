@@ -6,11 +6,10 @@ const options = {
   url: args[2],
   method: 'GET'
 };
-
-request(options, function (res, error) {
-  if (error) {
-    console.error('error:', error);
+request(options, function (error, response) {
+  if (response) {
+    console.log(`code: ${response.statusCode}`);
   } else {
-    console.log('code:', res && res.statusCode);
+    console.log(error);
   }
 });
