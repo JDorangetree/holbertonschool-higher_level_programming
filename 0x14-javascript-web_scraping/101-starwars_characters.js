@@ -13,7 +13,6 @@ request(options, function (error, response, body) {
     const json = JSON.parse(body);
     results = json.results;
     urlList = results[args[2] - 1].characters;
-    console.log(urlList);
     for (const person in urlList) {
       request(urlList[person], function (error, response, body) {
         if (!error === null) {
