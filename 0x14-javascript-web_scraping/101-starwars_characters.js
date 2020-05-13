@@ -12,8 +12,7 @@ request(options, function (error, response, body) {
   } else {
     const json = JSON.parse(body);
     results = json.results;
-    urlList = results[args[2]].characters;
-    console.log(urlList);
+    urlList = results[args[2] - 1].characters;
     for (let i = 0; i < urlList.length; i++) {
       request(urlList[i], function (error, response, body) {
         if (!error === null) {
