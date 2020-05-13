@@ -13,8 +13,8 @@ request(options, function (error, response, body) {
     const json = JSON.parse(body);
     results = json.results;
     urlList = results[args[2] - 1].characters;
-    for (const person in urlList) {
-      request(urlList[person], function (error, response, body) {
+    urlList.forEach(element => {
+      request(element, function (error, response, body) {
         if (!error === null) {
           console.error(error);
         } else {
@@ -22,6 +22,6 @@ request(options, function (error, response, body) {
           console.log(jsonCha.name);
         }
       });
-    }
+    });
   }
 });
