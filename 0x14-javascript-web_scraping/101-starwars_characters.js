@@ -13,8 +13,8 @@ request(options, function (error, response, body) {
     const json = JSON.parse(body);
     results = json.results;
     urlList = results[args[2] - 1].characters;
-    urlList.forEach(element => {
-      request(element, function (error, response, body) {
+    for (let i = 0; i < urlList.length; i++) {
+      request(urlList[i], function (error, response, body) {
         if (!error === null) {
           console.error(error);
         } else {
@@ -22,6 +22,6 @@ request(options, function (error, response, body) {
           console.log(jsonCha.name);
         }
       });
-    });
+    }
   }
 });
