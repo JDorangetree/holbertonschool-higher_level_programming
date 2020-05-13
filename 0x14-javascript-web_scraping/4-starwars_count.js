@@ -17,7 +17,7 @@ request(options, function (error, response, body) {
       let characters = [];
       characters = (result[i].characters);
       for (let a = 0; a < characters.length - 1; a++) {
-        if (characters[a] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (characters[a].indexOf('/18/') >= 0) {
           count++;
         }
       }
